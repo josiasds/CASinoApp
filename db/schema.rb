@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029185928) do
+ActiveRecord::Schema.define(:version => 20140430210909) do
 
   create_table "casino_login_tickets", :force => true do |t|
     t.string   "ticket",     :null => false
@@ -105,5 +105,10 @@ ActiveRecord::Schema.define(:version => 20131029185928) do
   end
 
   add_index "casino_users", ["authenticator", "username"], :name => "index_casino_users_on_authenticator_and_username", :unique => true
+
+  create_table "users", :force => true do |t|
+    t.string "email"
+    t.string "encrypted_password"
+  end
 
 end
