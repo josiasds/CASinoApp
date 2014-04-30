@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(:version => 20131029185928) do
   add_index "casino_proxy_granting_tickets", ["ticket"], :name => "index_proxy_granting_tickets_on_ticket", :unique => true
 
   create_table "casino_proxy_tickets", :force => true do |t|
-    t.string   "ticket",                                                     :null => false
-    t.text     "service",                  :limit => 255,                    :null => false
-    t.boolean  "consumed",                                :default => false, :null => false
-    t.integer  "proxy_granting_ticket_id",                                   :null => false
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.string   "ticket",                                      :null => false
+    t.text     "service",                                     :null => false
+    t.boolean  "consumed",                 :default => false, :null => false
+    t.integer  "proxy_granting_ticket_id",                    :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
-  add_index "casino_proxy_tickets", ["proxy_granting_ticket_id"], :name => "altered_casino_proxy_tickets_on_pgt_id"
+  add_index "casino_proxy_tickets", ["proxy_granting_ticket_id"], :name => "casino_proxy_tickets_on_pgt_id"
   add_index "casino_proxy_tickets", ["ticket"], :name => "index_casino_proxy_tickets_on_ticket", :unique => true
 
   create_table "casino_service_rules", :force => true do |t|
@@ -62,17 +62,17 @@ ActiveRecord::Schema.define(:version => 20131029185928) do
   add_index "casino_service_rules", ["url"], :name => "index_casino_service_rules_on_url", :unique => true
 
   create_table "casino_service_tickets", :force => true do |t|
-    t.string   "ticket",                                                      :null => false
-    t.text     "service",                   :limit => 255,                    :null => false
+    t.string   "ticket",                                       :null => false
+    t.text     "service",                                      :null => false
     t.integer  "ticket_granting_ticket_id"
-    t.boolean  "consumed",                                 :default => false, :null => false
-    t.boolean  "issued_from_credentials",                  :default => false, :null => false
-    t.datetime "created_at",                                                  :null => false
-    t.datetime "updated_at",                                                  :null => false
+    t.boolean  "consumed",                  :default => false, :null => false
+    t.boolean  "issued_from_credentials",   :default => false, :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   add_index "casino_service_tickets", ["ticket"], :name => "index_casino_service_tickets_on_ticket", :unique => true
-  add_index "casino_service_tickets", ["ticket_granting_ticket_id"], :name => "altered_casino_service_tickets_on_tgt_id"
+  add_index "casino_service_tickets", ["ticket_granting_ticket_id"], :name => "casino_service_tickets_on_tgt_id"
 
   create_table "casino_ticket_granting_tickets", :force => true do |t|
     t.string   "ticket",                                                :null => false

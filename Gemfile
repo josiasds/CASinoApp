@@ -16,17 +16,7 @@ gem 'casino-activerecord_authenticator'
 
 gem 'whenever', :require => false
 
-group :sqlite do
-  gem 'sqlite3'
-end
-
-group :mysql do
-  gem 'mysql2'
-end
-
-group :postgres do
-  gem 'pg'
-end
+gem 'pg'
 
 group :development do
   gem 'capistrano'
