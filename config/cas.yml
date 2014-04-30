@@ -60,7 +60,7 @@ production:
       options:
         connection:
           adapter: "postgresql"
-          host:<%= ENV['MEURIO_ACCOUNTS_DBHOST'] %>
+          host: <%= ENV['MEURIO_ACCOUNTS_DBHOST'] %>
           username: <%= ENV['MEURIO_ACCOUNTS_DBNAME'] %>
           password: <%= ENV['MEURIO_ACCOUNTS_DBPASS'] %>
           database: <%= ENV['MEURIO_ACCOUNTS_DBUSER'] %>
