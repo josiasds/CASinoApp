@@ -60,10 +60,10 @@ production:
       options:
         connection:
           adapter: "postgresql"
-          host: ec2-54-83-6-153.compute-1.amazonaws.com
-          username: ENV['DBNAME']
-          password: ENV['DBPASS']
-          database: ENV['USER']
+          host:<%= ENV['MEURIO_ACCOUNTS_DBHOST'] %>
+          username: <%= ENV['MEURIO_ACCOUNTS_DBNAME'] %>
+          password: <%= ENV['MEURIO_ACCOUNTS_DBPASS'] %>
+          database: <%= ENV['MEURIO_ACCOUNTS_DBUSER'] %>
         table: "users"
         username_column: "email"
         password_column: "encrypted_password"
