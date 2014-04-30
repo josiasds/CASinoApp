@@ -54,16 +54,16 @@ production:
       options:
         users:
           testuser:
-            password: "foobar123"    
+            password: "foobar123"
     meurio_accounts:
       authenticator: "ActiveRecord"
       options:
         connection:
           adapter: "postgresql"
-          host: ENV['MEURIO_ACCOUNTS_DBHOST']
-          username: ENV['MEURIO_ACCOUNTS_DBNAME']
-          password: ENV['MEURIO_ACCOUNTS_DBPASS']
-          database: ENV['MEURIO_ACCOUNTS_DBUSER']
+          host: ENV['DBHOST']
+          username: ENV['DBNAME']
+          password: ENV['DBPASS']
+          database: ENV['USER']
         table: "users"
         username_column: "email"
         password_column: "encrypted_password"
