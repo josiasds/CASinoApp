@@ -49,15 +49,21 @@ production:
     sso_name: 'CASino'
     footer_text: 'Powered by <a href="http://rbcas.com/">CASino</a>'
   authenticators:
-   meurio_accounts:
-     authenticator: "ActiveRecord"
-     options:
-       connection:
-         adapter: "postgresql"
-         host: ENV['MEURIO_ACCOUNTS_DBHOST']
-         username: ENV['MEURIO_ACCOUNTS_DBNAME']
-         password: ENV['MEURIO_ACCOUNTS_DBPASS']
-         database: ENV['MEURIO_ACCOUNTS_DBUSER']
-       table: "users"
-       username_column: "email"
-       password_column: "encrypted_password"
+    static:
+      class: "CASino::StaticAuthenticator"
+      options:
+        users:
+          testuser:
+            password: "foobar123"    
+    meurio_accounts:
+      authenticator: "ActiveRecord"
+      options:
+        connection:
+          adapter: "postgresql"
+          host: ENV['MEURIO_ACCOUNTS_DBHOST']
+          username: ENV['MEURIO_ACCOUNTS_DBNAME']
+          password: ENV['MEURIO_ACCOUNTS_DBPASS']
+          database: ENV['MEURIO_ACCOUNTS_DBUSER']
+        table: "users"
+        username_column: "email"
+        password_column: "encrypted_password"
