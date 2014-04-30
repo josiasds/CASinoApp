@@ -9,6 +9,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'therubyracer'
 end
+gem 'rails_12factor'
 
 gem 'casino'
 gem 'casino-ldap_authenticator'

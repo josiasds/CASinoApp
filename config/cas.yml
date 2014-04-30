@@ -60,7 +60,7 @@ production:
       options:
         connection:
           adapter: "postgresql"
-          host: ENV['DBHOST']
+          host: ec2-54-83-6-153.compute-1.amazonaws.com
           username: ENV['DBNAME']
           password: ENV['DBPASS']
           database: ENV['USER']
