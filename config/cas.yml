@@ -60,10 +60,10 @@ production:
       options:
         connection:
           adapter: "postgresql"
-          host: <%= ENV['MEURIO_ACCOUNTS_DBHOST'] %>
-          username: <%= ENV['MEURIO_ACCOUNTS_DBUSER'] %>
-          password: <%= ENV['MEURIO_ACCOUNTS_DBPASS'] %>
-          database: <%= ENV['MEURIO_ACCOUNTS_DBNAME'] %>
+          host: <%= ENV['DBHOST'] %>
+          username: <%= ENV['DBUSER'] %>
+          password: <%= ENV['DBPASS'] %>
+          database: <%= ENV['DBNAME'] %>
         table: "users"
         username_column: "email"
         password_column: "encrypted_password"
